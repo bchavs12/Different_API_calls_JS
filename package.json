@@ -1,0 +1,11 @@
+{
+  "name": "api_calls",
+  "version": "1.0.0",
+  "description": "4 ways to make an API Call in JS and I tested all of them to see the difference between them, and get some fundamentals concepts about HTTP_REQUEST",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bchavs12",
+  "license": "MIT"
+}
