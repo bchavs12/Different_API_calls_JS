@@ -1,4 +1,4 @@
-# Glossary > Ajax
+# Glossary --> Ajax
 
 - Asynchronous JavaScript and XML (AJAX)
 - Web development technique in which a web app fetches content from the server by making asynchronous HTTP requests,
@@ -27,3 +27,5 @@ xhr.onload = () => {
 
 xhr.send(null)
 ```
+
+# Glossary --> FetchAPI

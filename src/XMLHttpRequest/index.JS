@@ -8,16 +8,21 @@ xhr.open(method, API_URL, true);
 
 // Define a função de callback que será chamada quando a resposta for recebida
 xhr.onreadystatechange = () => {
-  if (xhr.readyState === 4 && xhr.status === 200) {
-    const data = JSON.parse(xhr.response);
+  try {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      const data = JSON.parse(xhr.response);
 
-    // TODOS iteration and element list creation
-    data.todos.forEach(({ id, todo }) => {
-      const li = document.createElement("li");
-      // const index = todo
-      li.textContent = `Task: ${todo}`;
-      Ul_Element.appendChild(li);
-    });
+      // TODOS iteration and element list creation
+      data.todos.forEach(({ id, todo }) => {
+        const li = document.createElement("li");
+        // const index = todo
+        li.textContent = `Task: ${todo}`;
+        Ul_Element.appendChild(li);
+      });
+    }
+
+  } catch (error) {
+    console.error(`Error: ${error}`)
   }
 };
 
