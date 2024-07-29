@@ -4,7 +4,7 @@
 - Web development technique in which a web app fetches content from the server by making asynchronous HTTP requests,
 - Ajax can be used to create **Single-page Applications**, in which the entire web app consists of a single document, which uses Ajax to update its content as needed.
 
-## Ajax Utility
+## Ajax summary
 
     - Nowadays Fetch()API Is more suitable for modern web applications
     - But learn AJAX still be usefull for fundamentals concepts
@@ -28,4 +28,32 @@ xhr.onload = () => {
 xhr.send(null)
 ```
 
-# Glossary --> FetchAPI
+# Fetch Request
+
+```js
+function fetchUserData(callback) {
+  fetch(API_URL)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.statusText}`)
+      }
+
+      return response.json()
+    })
+    .then((users) => {
+      users.forEach((user) => {
+        callback(user)
+      })
+    })
+}
+
+function userNameList(data) {
+  const userName = data.name
+  const li = document.createElement("li")
+  htmlElementList.appendChild(li)
+
+  li.textContent = userName
+}
+
+fetchUserData(userNameList)
+```
